@@ -1,39 +1,38 @@
 # Programming Paradigms: What We've Learned Not to Do
 
-I want to present a rather untypical view of what programming paradigms are. So far, we’ve got three major paradigms:
+I want to present a rather untypical view of programming paradigms. We have three major paradigms:
 
 1. Structured Programming,
-2. Object-Oriented Programming (OOP),
-3. Functional Programming.
+2. Object-Oriented Programming, and
 
-And no, there probably won’t be a fourth. Here’s why.
+3. Functional Programming.
 
 Programming Paradigms are fundamental ways of structuring code. They tell you what structures to use and, more importantly, **what to avoid**. The paradigms do not create new power but actually limit our power. They impose rules on how to write code.
 
-Let's walk through it.
+Also, there will probably not be a fourth paradigm. Here’s why.
 
 ## Structured Programming
 
-In the early days of programming, Edsger Dijkstra recognized a fundamental problem: programming is hard, and programmers don't do it very well. Programs would grow in complexity in become a big mess, impossible to manage.
+In the early days of programming, Edsger Dijkstra recognized a fundamental problem: programming is hard, and programmers don't do it very well. Programs would grow in complexity and become a big mess, impossible to manage.
 
-So he proposed applying the mathematical discipline of proof to programming. This basically means:
+So he proposed applying the mathematical discipline of proof. This basically means:
 
 1. Start with small units that you can prove to be correct.
 2. Use these units to glue together a bigger unit. Since the small units are proven correct, the bigger unit is correct too (if done right).
 
-Similar to what we nowadays would say DRY (don't repeat yourself) would be in the sense of creating functions and moduralizing your code - but with proof.
+So similar to moduralizing your code, making it DRY (don't repeat yourself). But with "mathematical proof".
 
-Dijkstra discovered that certain uses of `goto` statements makes this decomposition very difficult. Other uses of `goto`, however, did not. And the latter mapped to simpler selection and iteration control structures like `if/then/else` and `do/while`.
+Now the key part. Dijkstra noticed that certain uses of `goto` statements make this decomposition very difficult. Other uses of `goto`, however, did not. And these latter `goto`s basically just map to structures like `if/then/else` and `do/while`.
 
-So he proposed to remove `goto` entirely and allow only `if/then/else` and `do/while`. **This is structured programming.**
+So he proposed to remove the first type of `goto`, the bad type. Or even better: remove `goto` entirely and introduce `if/then/else` and `do/while`. **This is structured programming.**
 
-That's really all it is. And he was right, so his proposal "won" over time. The actual proofs never came of course, but his proposal of what we now call _structured programming_ succeeded.
+That's really all it is. And he was right about `goto` being harmful, so his proposal "won" over time. Of course, actual mathematical proofs never became a thing, but his proposal of what we now call structured programming succeeded.
 
 ### In Short
 
-No `goto`, only `if/then/else` and `do/while` = Structured Programming
+Mp `goto`, only `if/then/else` and `do/while` = Structured Programming
 
-So yes, we did not give new power to the devs, but we removed power from the devs.
+So yes, structured programming does not give new power to devs, it removes power.
 
 ## Object-Oriented Programming (OOP)
 
@@ -43,7 +42,7 @@ By this, local variables declared by a function can exist long after the functio
 
 This is OOP.
 
-Now, OOP is often associated with "modeling the real world" or the trio of encapsulation, inheritance, and polymorphism, but all of that was possible before. The biggest power of OOP is arguably polymorphism. It allows dependency version, plugin architecture and more. OOP did not invent it though, as we will see in a second, it just made it safe and easy by restricting the devs how to do it.
+Now, OOP is often associated with "modeling the real world" or the trio of encapsulation, inheritance, and polymorphism, but all of that was possible before. The biggest power of OOP is arguably polymorphism. It allows dependency version, plugin architecture and more. However, OOP did not invent this as we will see in a second.
 
 ### Polymorphism in C
 
@@ -106,7 +105,7 @@ This way of achieving polymorphic behavior is also used for IO device independen
 
 ### Why OO is still a Benefit?
 
-While C for example can achieve polymorphism, it requires careful manual setup and you need to adherence to conventions. It's error-prone.
+While C for example can achieve polymorphism, it requires careful manual setup and you need to adhere to conventions. It's error-prone.
 
 OOP languages like Java or C# didn't invent polymorphism, but they formalized and automated this pattern. Features like virtual functions, inheritance, and interfaces handle the underlying function pointer management (like vtables) automatically. So all the aforementioned negatives are gone. You even get type safety.
 
@@ -149,4 +148,13 @@ The pattern is clear. Programming paradigms restrict devs:
 
 Paradigms tell us what not to do. Or differently put, we've learned over the last 50 years that programming freedom can be dangerous. Constraints make us build better systems.
 
-So back to my original claim that there will be no fourth. What more do you want to take away? Also, all these paradigms were discovered between 1950 and 1970. So probably we will not see a fourth one.
+So back to my original claim that there will be no fourth paradigm. What more than `goto`, function pointers and assigments do you want to take away...? Also, all these paradigms were discovered between 1950 and 1970. So probably we will not see a fourth one.
+
+# Feedback ⌨️😊
+
+Feel free to contribute by submitting a PR or creating an issue.  
+**If this was helpful, you can show support by giving this repository a star! 🌟**
+
+# License
+
+MIT
